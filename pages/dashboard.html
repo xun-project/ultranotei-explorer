@@ -106,8 +106,8 @@
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
-              <label class="tx-primary" tkey="mktCCXToUSD">CCX to USD</label>
-              <h2><span id="CCXToUSD">N/A</h2>
+              <label class="tx-primary" tkey="mktxuniToUSD">xuni to USD</label>
+              <h2><span id="xuniToUSD">N/A</h2>
             </div>
             <div class="icon icon-info">
               <span class="fa fa-sm fa-dollar"></span>
@@ -117,8 +117,8 @@
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
-              <label class="tx-primary" tkey="mktCCXToBTC">CCX to BTC</label>
-              <h2><span id="CCXToBTC">N/A</span></h2>
+              <label class="tx-primary" tkey="mktxuniToBTC">xuni to BTC</label>
+              <h2><span id="xuniToBTC">N/A</span></h2>
             </div>
             <div class="icon icon-info">
               <span class="fa fa-sm fa-btc"></span>
@@ -178,7 +178,7 @@
           <span class="input-group-addon" id="calcHashResultsHolder">
             <div id="calcHashAmount">
               <span id="calcHashAmount1"></span>
-              <span id="calcHashSymbol"> CCX</span>
+              <span id="calcHashSymbol"> xuni</span>
               <span id="calcHashAmount2"></span>
             </div>
             <div id="calcHashPeriod">
@@ -194,7 +194,7 @@
 
 <script>
   var block = null;
-  var USDperCCX = null;
+  var USDperxuni = null;
   var diffAreaChart = null;
   var marketPriceAreaChart = null;
 
@@ -229,8 +229,8 @@
 
   // Get price in specified currency
   function getCurrencyPriceText(coinAmmount) {
-    if (USDperCCX) {
-      var price = USDperCCX * coinAmmount;
+    if (USDperxuni) {
+      var price = USDperxuni * coinAmmount;
       return ("($ " + price.toFixed(2) + ")");
     }
   }
@@ -262,9 +262,9 @@
 
       // get conceal market data
       $.getJSON("https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", function (data) {
-        USDperCCX = data.market_data.current_price.usd;
-        $("#CCXToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
-        $("#CCXToBTC").html(data.market_data.current_price.btc.toFixed(8));
+        USDperxuni = data.market_data.current_price.usd;
+        $("#xuniToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
+        $("#xuniToBTC").html(data.market_data.current_price.btc.toFixed(8));
         $("#marketcap").html("$ " + localizeNumber(data.market_data.market_cap.usd.toFixed(0)));
         $("#marketcapRank").html("(RANK " + data.market_cap_rank + ")");
         $("#dailyVolume").html("$ " + localizeNumber(data.market_data.total_volume.usd.toFixed(0)));

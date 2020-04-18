@@ -1,4 +1,4 @@
-var CCX_GlobalNodeMap = (function () {
+var xuni_GlobalNodeMap = (function () {
   var markerClusters = null;
   var myIcon = null;
   var mbAttr = null;

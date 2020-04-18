@@ -4,7 +4,7 @@ return array(
         'pool' => 'https://explorer.ultranote.org/pool',
         'blockTargetInterval' => 120,
         'coinUnits' => 1000000,
-        'maple' => 'https://maplechange.com/api/v2/tickers/ccxbtc.json',
+        'maple' => 'https://maplechange.com/api/v2/tickers/xunibtc.json',
         'bitstamp' => 'https://www.bitstamp.net/api/ticker/'
 
         
