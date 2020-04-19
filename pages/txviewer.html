@@ -1,10 +1,10 @@
 <div id='main' class="container pd-t-30">
     <div class="card mg-t-20" id="blockInfo">
-        <div class="card-header tx-medium bd-0 tx-white bg-primary-dark"><h3><span tkey="txViewerTitle">Conceal Transaction Viewer</span></h3></div>
+        <div class="card-header tx-medium bd-0 tx-white bg-primary-dark"><h3><span tkey="txViewerTitle">UltraNote Transaction Viewer</span></h3></div>
         <div class="card-body card-body-info">
             <div class="container">  
                 <p><label tkey="txText1">This page allows viewing of private data in a transaction not viewable using the
-                <a href="http://explorer.conceal.network/" target = "_blank">Conceal Block Explorer</a>,
+                <a href="http://stats.ultranote.org/" target = "_blank">UltraNote Block Explorer</a>,
                 if you have the transaction hash, the recipient wallet address and either
                 the secret transaction key (provided by the sender and valid for only a single transaction)
                 or the recipient's secret view key.</label></p>
@@ -188,7 +188,7 @@ function checkTx(hash, tx, secretKey, account, secretKeyType) {
 
 function getTx(txHash, next) {
   $.ajax({
-    url: "https://explorer.conceal.network/daemon/json_rpc",
+    url: "https://stats.ultranote.org/daemon/json_rpc",
     method: "POST",
     data: JSON.stringify({
       jsonrpc:"2.0",
@@ -1737,9 +1737,9 @@ return{_strlen:lb,_ge_mul8:Va,_keccak:db,_ge_scalarmult:Ta,_ge_fromfe_frombytes_
 
 var config = {
     coinUnitPlaces: 6,
-    coinSymbol: 'xuni',
-    coinName: 'Conceal',
-    coinUriPrefix: 'conceal:',
+    coinSymbol: 'XUN',
+    coinName: 'UltraNote',
+    coinUriPrefix: 'UltraNote:',
     addressPrefix: 13956353
 };
 var cnUtil = (function(initConfig) {

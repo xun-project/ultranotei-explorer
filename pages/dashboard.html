@@ -64,8 +64,8 @@
         <h4 class="tx-white mg-b-3" tkey="netOverallSummary">Overall Network Summary</h4>
       </div>
       <div>
-        <a href="https://conceal.network/#about" class="btn btn-primary-outline" tkey="aboutConcealNetwork">About
-          Conceal Network</a>
+        <a href="https://ultranote.org/#about" class="btn btn-primary-outline" tkey="aboutUltraNoteNetwork">About
+          UltraNote Network</a>
       </div>
     </div><!-- d-flex -->
 
@@ -106,8 +106,8 @@
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
-              <label class="tx-primary" tkey="mktxuniToUSD">xuni to USD</label>
-              <h2><span id="xuniToUSD">N/A</h2>
+              <label class="tx-primary" tkey="mktXUNToUSD">XUN to USD</label>
+              <h2><span id="XUNToUSD">N/A</h2>
             </div>
             <div class="icon icon-info">
               <span class="fa fa-sm fa-dollar"></span>
@@ -117,8 +117,8 @@
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
-              <label class="tx-primary" tkey="mktxuniToBTC">xuni to BTC</label>
-              <h2><span id="xuniToBTC">N/A</span></h2>
+              <label class="tx-primary" tkey="mktXUNToBTC">XUN to BTC</label>
+              <h2><span id="XUNToBTC">N/A</span></h2>
             </div>
             <div class="icon icon-info">
               <span class="fa fa-sm fa-btc"></span>
@@ -178,7 +178,7 @@
           <span class="input-group-addon" id="calcHashResultsHolder">
             <div id="calcHashAmount">
               <span id="calcHashAmount1"></span>
-              <span id="calcHashSymbol"> xuni</span>
+              <span id="calcHashSymbol"> XUN</span>
               <span id="calcHashAmount2"></span>
             </div>
             <div id="calcHashPeriod">
@@ -194,7 +194,7 @@
 
 <script>
   var block = null;
-  var USDperxuni = null;
+  var USDperXUN = null;
   var diffAreaChart = null;
   var marketPriceAreaChart = null;
 
@@ -229,8 +229,8 @@
 
   // Get price in specified currency
   function getCurrencyPriceText(coinAmmount) {
-    if (USDperxuni) {
-      var price = USDperxuni * coinAmmount;
+    if (USDperXUN) {
+      var price = USDperXUN * coinAmmount;
       return ("($ " + price.toFixed(2) + ")");
     }
   }
@@ -260,11 +260,11 @@
         }
       });
 
-      // get conceal market data
-      $.getJSON("https://api.coingecko.com/api/v3/coins/conceal?sparkline=true", function (data) {
-        USDperxuni = data.market_data.current_price.usd;
-        $("#xuniToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
-        $("#xuniToBTC").html(data.market_data.current_price.btc.toFixed(8));
+      // get UltraNote market data
+      $.getJSON("https://api.coingecko.com/api/v3/coins/UltraNote?sparkline=true", function (data) {
+        USDperXUN = data.market_data.current_price.usd;
+        $("#XUNToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
+        $("#XUNToBTC").html(data.market_data.current_price.btc.toFixed(8));
         $("#marketcap").html("$ " + localizeNumber(data.market_data.market_cap.usd.toFixed(0)));
         $("#marketcapRank").html("(RANK " + data.market_cap_rank + ")");
         $("#dailyVolume").html("$ " + localizeNumber(data.market_data.total_volume.usd.toFixed(0)));
@@ -357,7 +357,7 @@
   };
 
   function renderLastBlock() {
-    $.getJSON("https://explorer.conceal.network/daemon/getinfo", function (infoData) {
+    $.getJSON("https://stats.ultranote.org/daemon/getinfo", function (infoData) {
       updateText('totalBanked', getReadableCoins2(infoData.full_deposit_amount, 0));
 
       $.ajax({

@@ -89,8 +89,8 @@
   }
 
   function loadNodesDataToTable(initialLoad) {
-    $.getJSON("https://api.github.com/repos/ConcealNetwork/conceal-core/releases/latest", function (release) {
-      $.getJSON("https://explorer.conceal.network/pool/list?hasFeeAddr=false&isReachable=false&isSynced=True", function (data) {
+    $.getJSON("https://api.github.com/repos/UltraNoteNetwork/UltraNote-core/releases/latest", function (release) {
+      $.getJSON("https://stats.ultranote.org/pool/list?hasFeeAddr=false&isReachable=false&isSynced=True", function (data) {
         var correctHeightList = {};
         var correctHeightCnt = 0;
         var tableData = [];

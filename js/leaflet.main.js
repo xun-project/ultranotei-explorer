@@ -1,4 +1,4 @@
-var xuni_GlobalNodeMap = (function () {
+var XUN_GlobalNodeMap = (function () {
   var markerClusters = null;
   var myIcon = null;
   var mbAttr = null;
@@ -73,7 +73,7 @@ var xuni_GlobalNodeMap = (function () {
       map.addControl(new L.Control.Fullscreen());
     }
 
-    $.getJSON("https://explorer.conceal.network/services/nodes/geodata", function (data) {
+    $.getJSON("https://stats.ultranote.org/services/nodes/geodata", function (data) {
       $("#nodesNumber").html("(" + data.length + " online)");
 
       if (markerClusters) {

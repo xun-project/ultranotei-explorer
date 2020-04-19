@@ -113,8 +113,8 @@
 
 
   function loadNodesDataToTable(initialLoad) {
-    $.getJSON("https://api.github.com/repos/ConcealNetwork/conceal-core/releases/latest", function (release) {
-      $.getJSON("https://explorer.conceal.network/pool/list?hasFeeAddr=true&isReachable=true", function (data) {
+    $.getJSON("https://api.github.com/repos/UltraNoteNetwork/UltraNote-core/releases/latest", function (release) {
+      $.getJSON("https://stats.ultranote.org/pool/list?hasFeeAddr=true&isReachable=true", function (data) {
         var correctHeightList = {};
         var correctHeightCnt = 0;
         var tableData = [];
@@ -232,7 +232,7 @@
     if (nodesType == 0) {
       loadNodesDataToTable(false);
     } else {
-      xuni_GlobalNodeMap.load('globalNodeMap', function (success) {
+      XUN_GlobalNodeMap.load('globalNodeMap', function (success) {
         nodeLoadingIndicator.hide();
       });
     }
@@ -250,7 +250,7 @@
 
       $("#remoteNodesRow").hide();
       $("#globalNodesRow").show();
-      xuni_GlobalNodeMap.load('globalNodeMap', function (success) {
+      XUN_GlobalNodeMap.load('globalNodeMap', function (success) {
         nodeLoadingIndicator.hide();
       });
     } else {
