@@ -1,6 +1,6 @@
 <?php
 return array(
-        'api' => 'http://explorer.ultranote.org:33000'',
+        'api' => 'http://explorer.ultranote.org:43000'',
         'pool' => 'http://explorer.ultranote.org/pool',
         'blockTargetInterval' => 120,
         'coinUnits' => 1000000,

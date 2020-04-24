@@ -127,9 +127,9 @@
 
             if (obj.name) {
               if (obj.url && obj.url.host) {
-                rowData.push(obj.url.host + ":" + (obj.url.port || "16000"));
+                rowData.push(obj.url.host + ":" + (obj.url.port || "43000"));
               } else {
-                rowData.push(obj.location ? (obj.location.ip + ":" + (obj.nodePort || "16000")) : (obj.ip.substring(7) + ":" + (obj.nodePort || "16000")));
+                rowData.push(obj.location ? (obj.location.ip + ":" + (obj.nodePort || "43000")) : (obj.ip.substring(7) + ":" + (obj.nodePort || "43000")));
               }
               rowData.push(obj.name);
               if ((obj.location) && (obj.location.data)) {
