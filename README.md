@@ -10,7 +10,7 @@ Block explorer for UltraNote CryptoNote based cryptocurrency.
 2) Just upload to your website and change 'api' variable in config.js to point to your daemon.
 
 ### Development
-Conceal Devs: @taegus @katz @devopsralf
+Conceal Devs: @taegus @katz @devopsralf @ultranote
 
 ### Note
 A lot of this code is from the great Karbovanets/Karbowanec-Blockchain-Explorer
