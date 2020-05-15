@@ -1,5 +1,5 @@
 var api = 'https://stats.ultranote.org/daemon';
-var poolListUrl = 'https://stats.ultranote.org/services/pools/list';
+var poolListUrl = 'https://stats.ultranote.org/services/pools/data';
 var donationAddress = "";
 var blockTargetInterval = 120;
 var coinUnits = 1000000;
