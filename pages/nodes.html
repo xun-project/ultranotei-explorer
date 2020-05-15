@@ -113,7 +113,7 @@
 
 
   function loadNodesDataToTable(initialLoad) {
-    $.getJSON("https://api.github.com/repos/UltraNoteNetwork/UltraNote-core/releases/latest", function (release) {
+    $.getJSON("https://api.github.com/repos/xun-project/ultranotei-core/releases/latest", function (release) {
       $.getJSON("https://stats.ultranote.org/pool/list?hasFeeAddr=true&isReachable=true", function (data) {
         var correctHeightList = {};
         var correctHeightCnt = 0;
