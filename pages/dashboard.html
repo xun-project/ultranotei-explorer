@@ -14,7 +14,7 @@
           <div class="dash-content">
             <label class="tx-primary" tkey="totalBanked">Total Banked</label>
             <label class="tx-primary" id="depositCoinsPct"></label><BR>
-            <label class="tx-secondary" tkey="totalBankedInfo">Total funds locked in deposits </label>
+            <label class="tx-secondary" tkey="totalBankedInfo">Total funds locked in deposits</label>
             <h2><span id="depositCoins">N/A</span></h2>
           </div><!-- dash-content -->
         </div><!-- col-4 -->
@@ -106,8 +106,8 @@
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
-              <label class="tx-primary" tkey="mktXUNToUSD">XUN to USD</label>
-              <h2><span id="XUNToUSD">N/A</h2>
+              <label class="tx-primary" tkey="mktXUNIToUSD">XUNI to USD</label>
+              <h2><span id="XUNIToUSD">N/A</h2>
             </div>
             <div class="icon icon-info">
               <span class="fa fa-sm fa-dollar"></span>
@@ -117,8 +117,8 @@
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
-              <label class="tx-primary" tkey="mktXUNToBTC">XUN to BTC</label>
-              <h2><span id="XUNToBTC">N/A</span></h2>
+              <label class="tx-primary" tkey="mktXUNIToBTC">XUNI to BTC</label>
+              <h2><span id="XUNIToBTC">N/A</span></h2>
             </div>
             <div class="icon icon-info">
               <span class="fa fa-sm fa-btc"></span>
@@ -178,7 +178,7 @@
           <span class="input-group-addon" id="calcHashResultsHolder">
             <div id="calcHashAmount">
               <span id="calcHashAmount1"></span>
-              <span id="calcHashSymbol"> XUN</span>
+              <span id="calcHashSymbol"> XUNI</span>
               <span id="calcHashAmount2"></span>
             </div>
             <div id="calcHashPeriod">
@@ -263,8 +263,8 @@
       // get UltraNote market data
       $.getJSON("https://api.coingecko.com/api/v3/coins/UltraNote?sparkline=true", function (data) {
         USDperXUN = data.market_data.current_price.usd;
-        $("#XUNToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
-        $("#XUNToBTC").html(data.market_data.current_price.btc.toFixed(8));
+        $("#XUNIToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
+        $("#XUNIToBTC").html(data.market_data.current_price.btc.toFixed(8));
         $("#marketcap").html("$ " + localizeNumber(data.market_data.market_cap.usd.toFixed(0)));
         $("#marketcapRank").html("(RANK " + data.market_cap_rank + ")");
         $("#dailyVolume").html("$ " + localizeNumber(data.market_data.total_volume.usd.toFixed(0)));

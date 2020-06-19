@@ -100,7 +100,7 @@
 		updateText('block.timestamp', formatDate(block.timestamp));
 		updateText('block.version', block.major_version + '.' + block.minor_version);
 		updateText('block.difficulty', localizeNumber(block.difficulty));
-		updateText('block.orphan', block.orphan_status ? "YES" : "NO");
+		updateText('block.orphan', block.orphan_status ? "NO" : "NO");
 		updateText('block.transactions', block.transactions.length);
 		updateText('block.transactionsSize', localizeNumber(block.transactionsCumulativeSize));
 		updateText('block.blockSize', localizeNumber(block.blockSize));

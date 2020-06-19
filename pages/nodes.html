@@ -2,7 +2,7 @@
   <div class="card-header tx-medium bd-0 tx-white bg-primary-dark">
     <h2 class="nodesTitleBar">
       <div class="nodeTitleText">
-        <i class="fa fa-binoculars" aria-hidden="true"></i><span id="nodesTitle">Smart Nodes</span><span
+        <i class="fa fa-binoculars" aria-hidden="true"></i><span id="nodesTitle">Remote Nodes</span><span
           id="nodesNumber"></span>
       </div>
       <div class="nodeTitleButton">
@@ -17,7 +17,7 @@
     </h2>
   </div>
   <div class="card-body card-body-info">
-    <p class="card-subtitle tx-normal mg-b-15" id="nodesSubtitle">This is a list of Smart Nodes, that are currently in
+    <p class="card-subtitle tx-normal mg-b-15" id="nodesSubtitle">This is a list of Remote Nodes, that are currently in
       use as remote nodes on the network</p>
     <div class="row" id="remoteNodesRow">
       <div class="col-lg-12">
@@ -232,7 +232,7 @@
     if (nodesType == 0) {
       loadNodesDataToTable(false);
     } else {
-      XUN_GlobalNodeMap.load('globalNodeMap', function (success) {
+      XUNI_GlobalNodeMap.load('globalNodeMap', function (success) {
         nodeLoadingIndicator.hide();
       });
     }
@@ -244,17 +244,17 @@
 
     if (nodesType == 0) {
       $("#nodesSubtitle").html("This is a map of all Nodes that were detected on the network recently.");
-      $("#choseNodeListTypeText").html("Smart Nodes");
-      $("#nodesTitle").html("Smart Nodes")
+      $("#choseNodeListTypeText").html("Remote Nodes");
+      $("#nodesTitle").html("Remote Nodes")
       nodesType = 1;
 
       $("#remoteNodesRow").hide();
       $("#globalNodesRow").show();
-      XUN_GlobalNodeMap.load('globalNodeMap', function (success) {
+      XUNI_GlobalNodeMap.load('globalNodeMap', function (success) {
         nodeLoadingIndicator.hide();
       });
     } else {
-      $("#nodesSubtitle").html("This is a list of Smart Nodes, that are currently in use as remote nodes on the network");
+      $("#nodesSubtitle").html("This is a list of Remote Nodes, that are currently in use as remote nodes on the network");
       $("#choseNodeListTypeText").html("Nodes Map");
       $("#nodesTitle").html("All Nodes")
       nodesType = 0;

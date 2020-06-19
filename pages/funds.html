@@ -23,7 +23,7 @@
             <tr>
               <th class="wd-15p ntFundsGroup">Group</th>
               <th class="wd-15p ntFundsCategory">Category</th>
-              <th class="wd-20p ntFundsPaid">Paid (XUN)</th>
+              <th class="wd-20p ntFundsPaid">Paid (XUNI)</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -270,15 +270,15 @@
           // Update footer
           if ($('#fundsTable').DataTable().columns(':visible').count() > 1) {
             $('tr:eq(0) th:eq(0)', api.table().footer()).html("Total spent so far:");
-            $('tr:eq(0) th:eq(1)', api.table().footer()).html(numberWithCommas(pageTotal) + " XUN");
+            $('tr:eq(0) th:eq(1)', api.table().footer()).html(numberWithCommas(pageTotal) + " XUNI");
             $('tr:eq(1) th:eq(0)', api.table().footer()).html("Funds available:");
             $('tr:eq(1) th:eq(1)', api.table().footer()).html(formatNumber(getReadableCoins(reserveData.result.total, 0)));
             $('tr:eq(2) th:eq(0)', api.table().footer()).html("Funds in reserve:");
-            $('tr:eq(2) th:eq(1)', api.table().footer()).html(numberWithCommas(currUnspentFunds) + " XUN");
+            $('tr:eq(2) th:eq(1)', api.table().footer()).html(numberWithCommas(currUnspentFunds) + " XUNI");
           } else {
-            $('tr:eq(0) th:eq(0)', api.table().footer()).html("Total spent: " + numberWithCommas(pageTotal) + " XUN");
+            $('tr:eq(0) th:eq(0)', api.table().footer()).html("Total spent: " + numberWithCommas(pageTotal) + " XUNI");
             $('tr:eq(1) th:eq(0)', api.table().footer()).html("Funds available: " + getReadableCoins(reserveData.result.total, 0));
-            $('tr:eq(2) th:eq(0)', api.table().footer()).html("Funds in reserve: " + numberWithCommas(currUnspentFunds) + " XUN");
+            $('tr:eq(2) th:eq(0)', api.table().footer()).html("Funds in reserve: " + numberWithCommas(currUnspentFunds) + " XUNI");
           }
         }
       });
@@ -323,7 +323,7 @@
         },
         tooltip: {
           trigger: 'item',
-          formatter: "{b} : {c} XUN"
+          formatter: "{b} : {c} XUNI"
         },
         legend: {
           x: 'left',
@@ -397,7 +397,7 @@
         },
         tooltip: {
           trigger: 'item',
-          formatter: "{b} : {c} XUN"
+          formatter: "{b} : {c} XUNI"
         },
         legend: {
           x: 'left',
