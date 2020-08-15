@@ -260,14 +260,15 @@
         }
       });
 
-      // get UltraNote market data
-      $.getJSON("https://api.coingecko.com/api/v3/coins/UltraNote?sparkline=true", function (data) {
-        USDperXUN = data.market_data.current_price.usd;
-        $("#XUNIToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
-        $("#XUNIToBTC").html(data.market_data.current_price.btc.toFixed(8));
-        $("#marketcap").html("$ " + localizeNumber(data.market_data.market_cap.usd.toFixed(0)));
-        $("#marketcapRank").html("(RANK " + data.market_cap_rank + ")");
-        $("#dailyVolume").html("$ " + localizeNumber(data.market_data.total_volume.usd.toFixed(0)));
+        // get UltraNote market data
+      $.getJSON("https://localcryptos.club/api/coin/ultranoteinfinity", function (data) {
+        USDperXUNI = data.data[0].XUNI.price.USD;
+        $("#XUNIToUSD").html("$ " + localizeNumber(data.data[0].XUNI.price.USD.toFixed(2)));
+        $("#XUNIToBTC").html(data.data[0].XUNI.price.BTC.toFixed(8));
+        $("#marketcap").html("$ " + localizeNumber(data.data[0].XUNI.totalVolume.USD.toFixed(0)));
+        $("#marketcapRank").html("(RANK " + '1' + ")");
+        $("#dailyVolume").html("$ " + localizeNumber(data.data[0].XUNI.dailyVolume.USD.toFixed(0)));
+
 
         if (marketPriceAreaChart) {
           marketPriceAreaChart.destroy();
