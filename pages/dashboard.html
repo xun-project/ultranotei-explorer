@@ -194,7 +194,7 @@
 
 <script>
   var block = null;
-  var USDperXUN = null;
+  var USDperXUNI = null;
   var diffAreaChart = null;
   var marketPriceAreaChart = null;
 
@@ -260,7 +260,7 @@
         }
       });
 
-        // get UltraNote market data
+	// get UltraNote market data
       $.getJSON("https://localcryptos.club/api/coin/ultranoteinfinity", function (data) {
         USDperXUNI = data.data[0].XUNI.price.USD;
         $("#XUNIToUSD").html("$ " + localizeNumber(data.data[0].XUNI.price.USD.toFixed(2)));
@@ -269,13 +269,12 @@
         $("#marketcapRank").html("(RANK " + '1' + ")");
         $("#dailyVolume").html("$ " + localizeNumber(data.data[0].XUNI.dailyVolume.USD.toFixed(0)));
 
-
         if (marketPriceAreaChart) {
           marketPriceAreaChart.destroy();
         }
 
         var timeLabels = [];
-        var dataLength = data.market_data.sparkline_7d.price.length;
+	var dataLength = data.data[0].XUNI.sparkline.length;
         var durationAsMS = moment.duration(7 / dataLength, 'd').asMilliseconds();
 
         for (i = dataLength - 1; i >= 0; i--) {
@@ -287,7 +286,7 @@
           data: {
             labels: timeLabels,
             datasets: [{
-              data: smooth(data.market_data.sparkline_7d.price, 3),
+	      data: data.data[0].XUNI.sparkline,
               backgroundColor: 'rgba(255,165,0,0.2)',
               fill: true,
               borderWidth: 0,
