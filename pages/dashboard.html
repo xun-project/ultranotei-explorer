@@ -91,7 +91,7 @@
         </div><!-- col-4 -->
       </div><!-- row -->
     </div>
-	<div class="report-summary-header">
+    <div class="report-summary-header">
       <div>
         <h4 class="tx-white mg-b-3" tkey="miningInfo">Mining info</h4>
       </div>
@@ -236,8 +236,8 @@
     $('#calcHashUnit').text($(this).text()).data('mul', $(this).data('mul'));
     calcEstimateProfit();
   });
-  
-    function initializePoolData() {
+
+  function initializePoolData() {
     $.getJSON(poolListUrl, function (data, textStatus, jqXHR) {
       var totalHashrate = 0;
       var totalMiners = 0;
@@ -250,7 +250,33 @@
       updateText('sumPoolsHashrate', getReadableHashRateString(totalHashrate));
       updateText('numOfMiners', localizeNumber(totalMiners));
     });
+
+    getXUNIdata()
   }
+
+  async function getXUNIdata() {
+    //var currencies = ["USD", "EUR", "BTC", "LTC", "ETH"]
+    var currencies = ["USD", "BTC"]
+    for (var item of currencies) {
+      var data = await getprice(item)
+      if (data) {
+        data = data[0]
+        $(`#XUNITo${item}`).text(parseFloat(data.price).toFixed(8))
+      }
+    }
+  }
+
+  function getprice(item) {
+    return new Promise(function (resolve, reject) {
+      $.getJSON(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://api.nomics.com/v1/currencies/ticker?key=507809c103093e0c58f74648d03644c2d0c0ade4&ids=XUNI&interval=1d,30d&convert=${item}&per-page=100&page=1`)}`, function (data, textStatus, jqXHR) {
+        setTimeout(() => {
+
+          resolve(JSON.parse(data.contents))
+        }, 1000)
+      })
+    })
+  }
+
 
   // Calculate current estimation
   function calcEstimateProfit() {
@@ -284,7 +310,7 @@
     init: function () {
       $("#currentDate").html("Today is: " + moment().format('MMMM Do YYYY'));
       initializePoolData();
-	  loadTranslations();
+      loadTranslations();
 
       $.ajax({
         url: api + '/json_rpc',
@@ -304,95 +330,11 @@
         }
       });
 
-        // get UltraNote market data
-        $.getJSON("https://api.coingecko.com/api/v3/coins/ultranote-infinity?sparkline=true", function (data) {
-        USDperXUN = data.market_data.current_price.usd;
-        $("#XUNIToUSD").html("$ " + localizeNumber(data.market_data.current_price.usd.toFixed(2)));
-        $("#XUNIToBTC").html(data.market_data.current_price.btc.toFixed(8));
-        $("#marketcap").html("$ " + localizeNumber(data.market_data.market_cap.usd.toFixed(0)));
-        $("#marketcapRank").html("(RANK " + data.market_cap_rank + ")");
-        $("#dailyVolume").html("$ " + localizeNumber(data.market_data.total_volume.usd.toFixed(0)));
 
-        if (marketPriceAreaChart) {
-          marketPriceAreaChart.destroy();
-        }
-
-        var timeLabels = [];
-        var dataLength = data.market_data.sparkline_7d.price.length;
-        var durationAsMS = moment.duration(7 / dataLength, 'd').asMilliseconds();
-
-        for (i = dataLength - 1; i >= 0; i--) {
-          timeLabels.push(moment().subtract(durationAsMS * (i + 1), 'ms').format('YYYY-MM-DD'));
-        }
-
-        marketPriceAreaChart = new Chart(document.getElementById('chartMarketPriceCanvas'), {
-          type: 'line',
-          data: {
-            labels: timeLabels,
-            datasets: [{
-              data: smooth(data.market_data.sparkline_7d.price, 3),
-              backgroundColor: 'rgba(255,165,0,0.2)',
-              fill: true,
-              borderWidth: 0,
-              pointRadius: 1,
-              borderColor: '#FFA500'
-            }]
-          },
-          options: {
-            animation: false,
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-              display: false,
-              labels: {
-                display: false
-              }
-            },
-            scales: {
-              yAxes: [{
-                ticks: {
-                  maxTicksLimit: 5,
-                  fontSize: 10,
-                  callback: function (value, index, values) {
-                    return '$' + value.toFixed(2);
-                  }
-                },
-                gridLines: {
-                  color: 'rgba(255,255,255,.08)'
-                }
-              }],
-              xAxes: [{
-                ticks: {
-                  autoSkip: true,
-                  maxTicksLimit: 7,
-                  maxRotation: 0,
-                  minRotation: 0
-                },
-                gridLines: {
-                  color: 'rgba(255, 255, 255, .08)'
-                },
-              }]
-            },
-            hover: {
-              mode: 'nearest',
-              intersect: true
-            },
-            tooltips: {
-              mode: 'index',
-              intersect: false,
-              callbacks: {
-                label: function (tooltipItem) {
-                  return "$ " + Number(tooltipItem.yLabel).toFixed(4);
-                }
-              }
-            }
-          }
-        });
-      });
     },
     update: function () {
       renderLastBlock();
-	
+
       updateText('networkHeight', localizeNumber(lastStats.height.toString()));
       updateText('networkTransactions', localizeNumber(lastStats.tx_count.toString()));
       updateText('networkHashrate', getReadableHashRateString(lastStats.difficulty / blockTargetInterval));
