@@ -1,7 +1,0 @@
-var api = 'https://stats.ultranote.org/daemon';
-var poolListUrl = 'https://stats.ultranote.org/services/pools/data';
-var donationAddress = "";
-var blockTargetInterval = 120;
-var coinUnits = 1000000;
-var symbol = 'xuni';
-var refreshDelay = 5000;

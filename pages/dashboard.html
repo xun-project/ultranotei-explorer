@@ -3,52 +3,61 @@
 
     <div class="dash-headline-two" id="welcomeSection">
       <div>
-        <h4 class="tx-white mg-b-5" tkey="welcome">Welcome</h4>
+        <h4 class="tx-white mg-b-5 font-weight-600 font-size-2em" tkey="dashboard">Dashboard</h4>
         <p class="mg-b-0" id="currentDate"></p>
       </div>
     </div><!-- dash-headline-two -->
-
-    <div class="card card-dash-one mg-t-20">
-      <div class="row no-gutters">
-        <div class="col-lg-4">
-          <div class="dash-content">
-            <label class="tx-primary" tkey="totalBanked">Total Banked</label>
-            <label class="tx-primary" id="depositCoinsPct"></label><BR>
-            <label class="tx-secondary" tkey="totalBankedInfo">Total funds locked in deposits</label>
-            <h2><span id="depositCoins">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="dash-content dash-small-info">
-            <label class="tx-primary" tkey="circulatingSuppy">Circulating Supply</label>
-            <label class="tx-primary" id="emissionPercentPct""></label><BR>
-            <label class=" tx-secondary" tkey="circulatingSuppyInfo">The total number of coins not banked.</label>
-            <h2><span id="emissionPercent">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="dash-content dash-small-info">
-            <label class="tx-primary" tkey="totalSupply">Total Supply</label>
-            <label class="tx-primary" id="totalCoinsPct">(100%)</label><BR>
-            <label class="tx-secondary" tkey="totalSupplyInfo">The total supply minted to date.</label>
-            <h2><span id="totalCoins">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
-      </div><!-- row -->
-    </div>
-
+    <div class="row justify-content-center mb-5 pt-5">
+      <div class="col-xl-3 col-sm-6 m-t35">
+        <div class="card height-10em">
+          <div class="card-body text-center">
+            <img src="../img/bank.png" class="margin-top-65px height-icon-width" alt="not found"/>
+            <h6 class="text-white">Total Banked <span id="depositCoinsPct"></span></h6>
+            <h6 class="text-white mt-3">Total funds locked in deposits.</h6>
+            <h6 class="text-white"><span id="depositCoins">N/A</h6></h6>
+            <br/>
+            <!-- <h6 class="text-white">Current block reward</h6> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 m-t35">
+        <div class="card height-10em">
+          <div class="card-body text-center">
+            <img src="../img/circulating.png" class="margin-top-65px height-icon-width" alt="not found"/>
+            <h6 class="text-white mt-0">Circulating Supply <span id="emissionPercentPct"></span></h6>
+            <h6 class="text-white mt-3" tkey="circulatingSuppyInfo">The total number of coins not banked.</label>
+            <h6 class="text-white"><span id="emissionPercent">N/A</span></h6>
+            <br/>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 m-t35">
+        <div class="card height-10em">
+          <div class="card-body text-center">
+            <img src="../img/supply-chain.png" class="margin-top-65px height-icon-width" alt="not found"/>
+            <h6 class="text-white mt-0" tkey="totalSupply">Total Supply <span class="text-white mt-3" id="totalCoinsPct">(100%)</span></h6>
+            <h6 class="text-white mt-3" tkey="totalSupplyInfo">The total supply minted to date.</label>
+            <h6 class="text-white"><span id="totalCoins">N/A</span></h6>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div><!-- row -->
+    <hr>
     <div class="nav-statistics-wrapper">
       <nav class="nav">
-        <a href="" class="nav-link active" tkey="overview">Overview</a>
+        <a href="" class="nav-link font-weight-600 font-size-2em txt-white" style="color:white !important; text-underline: none;" tkey="overview">Overview</a>
       </nav>
     </div><!-- nav-statistics-wrapper -->
+
 
     <div class="row no-gutters row-statistics mg-b-30" id="networkDiffRow">
       <div class="dasboard-box">
         <h1 class="tx-white tx-56 tx-lato tx-bold"><span id="networkDifficulty">N/A</span></h1>
         <h6 class="tx-15 tx-primary tx-bold mg-b-20" tkey="netDifficulty">Network Difficulty</h6>
         <p tkey="netDiffInfo">Chart on the right show the network difficulty for the last 30 blocks.</p>
-        <a data-page="explorer.html" href="#explorer" class="statement-link" tkey="netExplorer">Network Explorer<i
+        <a data-page="explorer.html" href="#explorer" class="statement-link btn-secondary" style=" background-color: #6418C3;
+        border-color: #6418C3; color:white !important;" tkey="netExplorer">Network Explorer<i
             class="fa fa-angle-right mg-l-5"></i></a>
         <p class="tx-12"></p>
       </div><!-- col-5 -->
@@ -61,75 +70,100 @@
 
     <div class="report-summary-header">
       <div>
-        <h4 class="tx-white mg-b-3" tkey="netOverallSummary">Overall Network Summary</h4>
+        <h4 class="tx-white mg-b-3 font-size-2em" tkey="netOverallSummary">Overall Network Summary</h4>
       </div>
       <div>
-        <a href="https://ultranote.org/#about" class="btn btn-primary-outline" tkey="aboutUltraNoteNetwork">About
+        <a href="https://ultranote.org/#about" class="btn" style=" background-color: #6418C3;
+        border-color: #6418C3; color:white !important;" tkey="aboutUltraNoteNetwork">About
           UltraNote Network</a>
       </div>
     </div><!-- d-flex -->
 
-    <div class="card card-dash-one mg-t-20">
-      <div class="row no-gutters">
-        <div class="col-lg-4">
-          <div class="dash-content">
-            <label class="tx-primary" tkey="blockchainHeight">Blockchain Height</label>
-            <h2><span id="networkHeight">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="dash-content dash-small-info">
-            <label class="tx-primary" tkey="transactions">Transactions</label>
-            <h2><span id="networkTransactions">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="dash-content dash-small-info">
-            <label class="tx-primary" tkey="netHashrate">Network Hashrate</label>
-            <h2><span id="networkHashrate">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
+      <div class="row input-bg-purple-dark justify-content-center mt-5 pt-5 pb-5">
+        <div class="col-xl-3 col-sm-6 m-t35">
+          <div class="card height-10em">
+            <div class="card-body text-center">
+              <img src="../img/blockchain.png" class="margin-top-65px height-icon-width" alt="not found"/>
+              <h2 id="networkHeight" class="text-white font-weight-600">N/A</h2>
+              <br/>
+              <h6 class="text-white">Blockchain Height</h6>
+            </div>
+  
+          </div>
+  
+        </div>
+        <div class="col-xl-3 col-sm-6 m-t35">
+          <div class="card height-10em">
+            <div class="card-body text-center">
+              <img src="../img/lending.png" class="margin-top-65px height-icon-width" alt="not found"/>
+              <h2 id="networkTransactions" class="text-white font-weight-600">N/A</h2>
+              <br/>
+              <h6 class="text-white">Transactions</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 m-t35">
+          <div class="card height-10em">
+            <div class="card-body text-center">
+              <img src="../img/networking.png" class="margin-top-65px height-icon-width" alt="not found"/>
+              <h2 id="networkHashrate" class="text-white font-weight-600">N/A</h2>
+              <br/>
+              <h6 class="text-white">Network Hashrate</h6>
+            </div>
+  
+          </div>
+  
+        </div>
       </div><!-- row -->
-    </div>
+      <hr>
     <div class="report-summary-header">
       <div>
-        <h4 class="tx-white mg-b-3" tkey="miningInfo">Mining info</h4>
+        <h4 class="tx-white mg-b-3 font-size-2em" tkey="miningInfo">Mining info</h4>
       </div>
     </div><!-- d-flex -->
+    
 
-    <div class="card card-dash-one mg-t-20">
-      <div class="row no-gutters">
-        <div class="col-lg-4">
-          <div class="dash-content">
-            <label class="tx-primary" tkey="currentReward">Current block reward</label>
-            <h2><span id="currentReward">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="dash-content dash-small-info">
-            <label class="tx-primary" tkey="numOfMiners">Number of Miners</label>
-            <h2><span id="numOfMiners">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
-        <div class="col-lg-4">
-          <div class="dash-content dash-small-info">
-            <label class="tx-primary" tkey="sumPoolsHashrate">Pools speed</label>
-            <h2><span id="sumPoolsHashrate">N/A</span></h2>
-          </div><!-- dash-content -->
-        </div><!-- col-4 -->
+      <div class="row justify-content-center mt-5 pt-5 pb-5">
+        <div class="col-xl-3 col-sm-6 m-t35">
+          <div class="card height-10em">
+            <div class="card-body text-center">
+              <img src="../img/medal.png" class="margin-top-65px height-icon-width" alt="not found"/>
+              <h2 id="currentReward" class="text-white font-weight-600">N/A</h2>
+              <br/>
+              <h6 class="text-white">Current block reward</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 m-t35">
+          <div class="card height-10em">
+            <div class="card-body text-center">
+              <img src="../img/miner.png" class="margin-top-65px height-icon-width" alt="not found"/>
+              <h2 id="numOfMiners" class="text-white font-weight-600">N/A</h2>
+              <br/>
+              <h6 class="text-white">Number of Miners</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 m-t35">
+          <div class="card height-10em">
+            <div class="card-body text-center">
+              <img src="../img/time.png" class="margin-top-65px height-icon-width" alt="not found"/>
+              <h2 id="sumPoolsHashrate" class="text-white font-weight-600">N/A</h2>
+              <br/>
+              <h6 class="text-white">Pools Speed</h6>
+            </div>
+          </div>
+        </div>
       </div><!-- row -->
-    </div>
 
-    <hr>
-
-    <div class="nav-statistics-wrapper mg-t-20">
+    <!-- <div class="nav-statistics-wrapper mg-t-20">
       <nav class="nav">
         <a href="" class="nav-link active" tkey="markets">Market / Calculator</a>
       </nav>
-    </div><!-- nav-statistics-wrapper -->
+    </div>nav-statistics-wrapper -->
 
     <!-- Statistics -->
-    <div id="blockStats" class="card card-dash-one mg-b-20">
+    <!-- <div id="blockStats" class="card card-dash-one mg-b-20">
       <div class="row no-gutters">
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
@@ -140,8 +174,8 @@
             <div class="icon icon-info">
               <span class="fa fa-sm fa-dollar"></span>
             </div>
-          </div><!-- dash-content -->
-        </div><!-- col-3 -->
+          </div>
+        </div>
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
@@ -151,8 +185,8 @@
             <div class="icon icon-info">
               <span class="fa fa-sm fa-btc"></span>
             </div>
-          </div><!-- dash-content -->
-        </div><!-- col-3 -->
+          </div>
+        </div>
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
@@ -163,8 +197,8 @@
             <div class="icon icon-info">
               <span class="fa fa-sm fa-trophy"></span>
             </div>
-          </div><!-- dash-content -->
-        </div><!-- col-3 -->
+          </div>
+        </div>
         <div class="col-lg-3">
           <div class="dash-content dash-small-info dash-market">
             <div class="info-text">
@@ -174,27 +208,84 @@
             <div class="icon icon-info">
               <span class="fa fa-sm fa-money"></span>
             </div>
-          </div><!-- dash-content -->
-        </div><!-- col-3 -->
-      </div><!-- row -->
-    </div>
-
+          </div>
+        </div>
+      </div>
+    </div> -->
+<!-- 
     <div id="chartMarketPrice">
       <canvas id="chartMarketPriceCanvas"></canvas>
       <a class="chart-style"></a>
+    </div> -->
+    <hr>
+    <div class="report-summary-header">
+      <div>
+        <h4 class="tx-white mg-b-3 font-size-2em" tkey="miningInfo">Market / Calculator</h4>
+      </div>
+    </div><!-- d-flex -->
+
+    <div class="row justify-content-center mt-5 pt-5 mb-5">
+      <div class="col-xl-3 col-sm-6 m-t35">
+        <div class="card height-10em">
+          <div class="card-body text-center">
+            <img src="../img/dollars.png" class="margin-top-65px height-icon-width" alt="not found"/>
+            <h2 id="XUNIToUSD" class="text-white font-weight-600">$168,331.09</h2>
+            <br/>
+            <h6 class="text-white">XUNI TO USD</h6>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-xl-3 col-sm-6 m-t35">
+        <div class="card height-10em">
+          <div class="card-body text-center">
+            <img src="../img/xuni.png" class="margin-top-65px height-icon-width" alt="not found"/>
+            <h2 id="XUNIToBTC" class="text-white font-weight-600">$168,331.09</h2>
+            <br/>
+            <h6 class="text-white">XUNI TO BTC</h6>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-xl-3 col-sm-6 m-t35">
+        <div class="card height-10em">
+          <div class="card-body text-center">
+            <img src="../img/market-cap.png" class="margin-top-65px height-icon-width" alt="not found"/>
+            <h2 class="text-white font-weight-600">N/A</h2>
+            <br/>
+            <h6 class="text-white">Market Cap</h6>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-xl-3 col-sm-6 m-t35">
+        <div class="card height-10em">
+          <div class="card-body text-center">
+            <img src="../img/volume.png" class="margin-top-65px height-icon-width" alt="not found"/>
+            <h2 class="text-white font-weight-600">N/A</h2>
+            <br/>
+            <h6 class="text-white">Daily Volume</h6>
+          </div>
+
+        </div>
+
+      </div>
     </div>
 
     <!-- Mining Profit Calculator -->
     <div class="card mg-t-20" id="miningProfitCalc">
-      <div class="card-header tx-medium bd-0 tx-white bg-primary-dark"><span tkey="estimateProfit">Estimate Mining
+      <div class="card-header tx-medium bd-0 tx-white bg-purple-dark text-center"><span tkey="estimateProfit">Estimate Mining
           Profits</span></div>
-      <div class="card-body" id="calcHashHolder">
+      <div class="card-body text-center m-auto" id="calcHashHolder">
         <div class="input-group">
-          <input class="form-control" id="calcHashRate" tplaceholder="enterYourHashrate"
+          <input class="form-control input-bg-purple-dark" id="calcHashRate" tplaceholder="enterYourHashrate"
             placeholder="Enter Your Hash Rate" type="number">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="calcHashDropdown">
-              <span id="calcHashUnit" data-mul="1">KH/s</span> <span class="caret"></span>
+            <button type="button" class="btn btn-primary dropdown-toggle input-bg-purple-dark" data-toggle="dropdown" id="calcHashDropdown">
+              <span id="calcHashUnit" class="text-white" data-mul="1">KH/s</span> <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu" id="calcHashUnits">
               <li><a href="#" data-mul="0">H/s</a></li>
@@ -202,14 +293,14 @@
               <li><a href="#" data-mul="2">MH/s</a></li>
             </ul>
           </div>
-          <span class="input-group-addon">=</span>
-          <span class="input-group-addon" id="calcHashResultsHolder">
+          <span class="input-group-addon input-bg-purple-dark">=</span>
+          <span class="input-group-addon input-bg-purple-dark" id="calcHashResultsHolder">
             <div id="calcHashAmount">
               <span id="calcHashAmount1"></span>
               <span id="calcHashSymbol"> XUNI</span>
               <span id="calcHashAmount2"></span>
             </div>
-            <div id="calcHashPeriod">
+            <div id="calcHashPeriod" class="input-bg-purple-dark">
               <span tkey="perDay">per day</span>
             </div>
           </span>
@@ -407,12 +498,12 @@
     }
 
     diffAreaChart = new Chart(document.getElementById('diffAreaChart'), {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: labelData,
         datasets: [{
           data: smooth(diffData, 2),
-          backgroundColor: 'rgba(255,165,0,0.2)',
+          backgroundColor: 'rgba(255,165,1,1)',
           fill: true,
           borderWidth: 0,
           borderColor: '#FFA500'
@@ -434,7 +525,7 @@
               fontSize: 10
             },
             gridLines: {
-              color: 'rgba(255,255,255,.08)'
+              display:false
             }
           }],
           xAxes: [{
@@ -443,7 +534,7 @@
               fontSize: 11
             },
             gridLines: {
-              color: 'rgba(255,255,255,.08)'
+              display:false
             }
           }]
         }
@@ -451,3 +542,4 @@
     });
   }
 </script>
+9:16 PM 3/2/2022

@@ -197,6 +197,15 @@ address {
   font-style: normal;
   line-height: inherit; }
 
+.bg-purple-dark {
+  background-color: #3B3363 !important;
+}
+
+.input-bg-purple-dark {
+  background: #2C254A !important;
+  border-color: transparent !important;
+}
+
 ol,
 ul,
 dl {
@@ -1375,7 +1384,7 @@ pre {
     outline: 0;
     box-shadow: none; }
   .form-control::placeholder, .dataTables_filter input::placeholder {
-    color: #6c757d;
+    color: white;
     opacity: 1; }
   .form-control:disabled, .dataTables_filter input:disabled, .form-control[readonly], .dataTables_filter input[readonly] {
     background-color: #e9ecef;
@@ -11593,7 +11602,7 @@ textarea.parsley-success:focus {
   display: flex;
   align-items: center;
   border: 1px solid #dee2e6;
-  background-color: #f8f9fa;
+  background-color: #3B3363;
   padding: 2px;
   border-radius: 50px; }
   .search-box .form-control, .search-box .dataTables_filter input, .dataTables_filter .search-box input {
@@ -11994,7 +12003,6 @@ textarea.parsley-success:focus {
       background-color: #1b84e7;
       background-image: linear-gradient(to right, #1b84e7 0%, #1515af 100%);
       background-repeat: repeat-x;
-      border-width: 0;
       color: #fff; }
       .slim-navbar .nav-item.active .nav-link .icon {
         color: #fff; }
@@ -12027,7 +12035,7 @@ textarea.parsley-success:focus {
     justify-content: center;
     background-color: #fff;
     border: 1px solid #dee2e6;
-    border-right-width: 0; }
+    }
     .slim-navbar .nav-link .icon {
       font-size: 24px;
       line-height: 0;
@@ -40465,11 +40473,11 @@ body {
 
 .statement-link,
 .nav-statistics-wrapper .nav:first-child .nav-link::before {
-  border-color: #FFA500 !important;
+  border-color: none !important;
 }
 
 a {
-  color: #FFA500 !important;
+  color: white !important;
 }
 
 .rdiobox input[type="radio"]:checked + span::before {
@@ -40484,7 +40492,7 @@ a {
 }
 
 .search-box .btn {
-  background-color: #FFA500 !important;
+  background-color: #3B3363 !important;
 }
 
 .search-box {
@@ -40576,7 +40584,7 @@ a {
 }
 
 #toolsNavItem {
-  border-right: 1px solid #343a40;
+  border-right: 1px solid #dee2e6;
   border-left: 0px none;
 }
 
