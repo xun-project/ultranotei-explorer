@@ -201,6 +201,10 @@ address {
   background-color: #3B3363 !important;
 }
 
+.bg-purple-onlydark {
+  background-color: #2C254A !important;
+}
+
 .input-bg-purple-dark {
   background: #2C254A !important;
   border-color: transparent !important;
@@ -40286,7 +40290,6 @@ a.hover-white-8:hover, a.hover-white-8:focus {
   color: #FFA500;
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #FFA500 !important;
 }
 
 .icon-info {
@@ -40360,8 +40363,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
   line-height: 30px;
   height: 45px;
   padding: 6px;
-  background-color: #212529;
-  border: 1px solid #495057;
+  background-color: #3B3363;
 }
 
 #calcHashDropdown {
@@ -40591,7 +40593,7 @@ a {
 /******************** NODE TABLE *********************/
 
 td.ntNodeName {
-  color: #FFA500 !important;
+  color: white !important;
 }
 
 td.ntNodePeers,
@@ -40617,7 +40619,7 @@ th.ntNodePlatform
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus {
-  background-color: #FFA500 !important;
+  background-color: #2C254A !important;
 }
 
 .dtrg-group.dtrg-start td
@@ -40695,7 +40697,7 @@ table.dataTable.dtr-inline.collapsed tbody tr[role="row"] > th:first-child::befo
 }
 
 .dataTables_filter label {
-  color: #ccc !important;
+  color: white !important;
 }
 
 .dataTables_filter input {

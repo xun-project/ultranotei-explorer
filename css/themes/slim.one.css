@@ -713,14 +713,14 @@ hr {
 /******************** TABLE BASIC ********************/
 .table:not([class*=" table-colored"]) thead tr th,
 .table:not([class*=" table-colored"]) thead tr td {
-  background-color: #343a40; }
+  background-color: #3B3363; }
 
 .table:not([class*=" table-colored"]) thead tr th,
 .table:not([class*=" table-colored"]) thead tr td,
 .table:not([class*=" table-colored"]) tbody tr th,
 .table:not([class*=" table-colored"]) tbody tr td {
   border-color: #343a40;
-  color: #868ba1; }
+  color: white; }
 
 .table-striped tbody tr:nth-child(odd) th,
 .table-striped tbody tr:nth-child(odd) td {
@@ -738,10 +738,10 @@ hr {
     color: #868ba1; }
 
 .dataTables_wrapper .dataTables_length label {
-  color: #868ba1; }
+  color: white; }
 
 .dataTables_wrapper .dataTables_filter input {
-  background-color: #212529;
+  background-color: #2C254A !important;
   border-color: #343a40; }
   .dataTables_wrapper .dataTables_filter input:focus {
     border-color: #495057;
@@ -766,15 +766,15 @@ hr {
 .table.dataTable {
   border-color: #343a40; }
   .table.dataTable tbody tr.odd td {
-    background-color: #212529; }
+    background-color: #3B3363; }
     .table.dataTable tbody tr.odd td.sorting_1 {
-      background-color: #262a2f; }
+      background-color: #3B3363; }
   .table.dataTable tbody tr.even td {
-    background-color: #262a2f; }
+    background-color: #3B3363; }
     .table.dataTable tbody tr.even td.sorting_1 {
-      background-color: #2a2f34; }
+      background-color: #3B3363; }
   .table.dataTable tbody tr:hover td, .table.dataTable tbody tr:hover td.sorting_1 {
-    background-color: #2c3237; }
+    background-color: #3B3363; }
   .table.dataTable.no-footer {
     border-bottom-color: #343a40; }
 

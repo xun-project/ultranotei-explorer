@@ -1,23 +1,23 @@
 <div class="card mg-t-20" id="nodeInfo">
-  <div class="card-header tx-medium bd-0 tx-white bg-primary-dark">
+  <div class="card-header tx-medium bd-0 tx-white input-bg-purple-dark">
     <h2 class="nodesTitleBar">
       <div class="nodeTitleText">
         <i class="fa fa-binoculars" aria-hidden="true"></i><span id="nodesTitle">Remote Nodes</span><span
           id="nodesNumber"></span>
       </div>
       <div class="nodeTitleButton">
-        <button class="btn btn-primary-outline" type="button" id="choseNodeListType">
-          <span class="btnIcon fa fa-search"></span><span tkey="nodeListType" id="choseNodeListTypeText">All Nodes
+        <button class="btn" type="button" id="choseNodeListType" style="border: 1px solid white; background-color: #2C254A;">
+          <span class="btnIcon fa fa-search text-white"></span><span class="text-white" tkey="nodeListType" id="choseNodeListTypeText">All Nodes
             Map</span>
         </button>
-        <button class="btn btn-primary-outline" type="button" id="refreshNodes">
-          <span class="btnIcon fa fa-search"></span><span tkey="refreshNodes">Refresh list</span>
+        <button class="btn" type="button" id="refreshNodes" style="border: 1px solid white; background-color: #2C254A;">
+          <span class="btnIcon fa fa-search text-white"></span><span class="text-white" tkey="refreshNodes">Refresh list</span>
         </button>
       </div>
     </h2>
   </div>
   <div class="card-body card-body-info">
-    <p class="card-subtitle tx-normal mg-b-15" id="nodesSubtitle">This is a list of Remote Nodes, that are currently in
+    <p class="card-subtitle tx-normal mg-b-15 text-white" id="nodesSubtitle">This is a list of Remote Nodes, that are currently in
       use as remote nodes on the network</p>
     <div class="row" id="remoteNodesRow">
       <div class="col-lg-12">

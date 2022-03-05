@@ -92,7 +92,7 @@ var displayChart = function displayChart() {
         display: true,
         text: langData['poolsChartTitle'] || 'Network Hashrate Visualization',
         fontSize: 18,
-        fontColor: '#FFA500'
+        fontColor: 'white'
       },
       legend: {
         position: 'bottom',

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="report-summary-header">
-    <div>
+    <div class="mt-4">
       <h4 class="tx-white mg-b-3" tkey="netStats">NETWORK STATISTICS</h4>
     </div>
   </div><!-- d-flex -->
@@ -30,12 +30,12 @@
     </div>
   </div><!-- d-flex -->
   <div class="card">
-    <div class="input-group">
-      <a id="next-page" href="#" class="btn btn-primary-outline input-group-addon disabled"><i class="fa fa-arrow-left"
+    <div class="input-group bg-purple-dark">
+      <a id="next-page" href="#" class="btn input-group-addon text-white"><i class="fa fa-arrow-left"
           aria-hidden="true"></i> <span tkey="btnNewer">Newer</span></a>
-      <span class="input-group-addon" id="heightNumber">№</span>
-      <input id="goto-height" type="text" class="form-control" tplaceholder="searchHeight" placeholder="Height">
-      <a id="goto-height-go" href="#" class="btn btn-primary-outline input-group-addon"><span tkey="btnGo">Go</span></a>
+      <span class="input-group-addon text-white" id="heightNumber">№</span>
+      <input id="goto-height" type="text" class="form-control bg-purple-onlydark" tplaceholder="searchHeight" style="border:none;" placeholder="Height">
+      <a id="goto-height-go" href="#" class="btn input-group-addon"><span tkey="btnGo">Go</span></a>
       <a id="prev-page" href="#" class="btn btn-primary-outline input-group-addon"><span tkey="btnOlder">Older</span> <i
           class="fa fa-arrow-right" aria-hidden="true"></i></a>
     </div>
@@ -57,7 +57,7 @@
       </table>
     </div>
     <p class="text-center">
-      <button type="button" class="btn btn-primary-outline" id="loadMoreBlocks" tkey="btnLoadMore">Load More</button>
+      <button type="button" class="btn text-white" style="background-color: #3B3363; border: 1px solid white;" id="loadMoreBlocks" tkey="btnLoadMore">Load More</button>
     </p>
   </div>
 </div>
