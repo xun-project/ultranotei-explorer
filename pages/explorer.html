@@ -36,7 +36,7 @@
       <span class="input-group-addon text-white" id="heightNumber">№</span>
       <input id="goto-height" type="text" class="form-control bg-purple-onlydark" tplaceholder="searchHeight" style="border:none;" placeholder="Height">
       <a id="goto-height-go" href="#" class="btn input-group-addon"><span tkey="btnGo">Go</span></a>
-      <a id="prev-page" href="#" class="btn btn-primary-outline input-group-addon"><span tkey="btnOlder">Older</span> <i
+      <a id="prev-page" href="#" class="btn input-group-addon"><span tkey="btnOlder">Older</span> <i
           class="fa fa-arrow-right" aria-hidden="true"></i></a>
     </div>
     <br />
@@ -56,7 +56,7 @@
         </tbody>
       </table>
     </div>
-    <p class="text-center">
+    <p class="text-center mt-2">
       <button type="button" class="btn text-white" style="background-color: #3B3363; border: 1px solid white;" id="loadMoreBlocks" tkey="btnLoadMore">Load More</button>
     </p>
   </div>
@@ -313,12 +313,12 @@
     var dateTime = new Date(block.timestamp * 1000).toISOString();
     row.setAttribute('data-dt', dateTime);
     var columns =
-      '<td class="blk-height">' + localizeNumber(block.height) + '</td>' +
-      '<td class="blk-size">' + localizeNumber(block.cumul_size) + '</td>' +
-      '<td class="blk-hash">' + formatBlockLink(block.hash) + '</td>' +
-      '<td class="blk-diff">' + localizeNumber(block.difficulty) + '</td>' +
-      '<td class="blk-tx">' + localizeNumber(block.tx_count) + '</td>' +
-      '<td class="date-time">' + formatDate(block.timestamp) + ' (<time class="timeago" datetime="' + dateTime + '"></time>)</td>';
+      '<td class="blk-height border-bottom-white2px">' + localizeNumber(block.height) + '</td>' +
+      '<td class="blk-size border-bottom-white2px">' + localizeNumber(block.cumul_size) + '</td>' +
+      '<td class="blk-hash border-bottom-white2px">' + formatBlockLink(block.hash) + '</td>' +
+      '<td class="blk-diff border-bottom-white2px">' + localizeNumber(block.difficulty) + '</td>' +
+      '<td class="blk-tx border-bottom-white2px">' + localizeNumber(block.tx_count) + '</td>' +
+      '<td class="date-time border-bottom-white2px">' + formatDate(block.timestamp) + ' (<time class="timeago" datetime="' + dateTime + '"></time>)</td>';
 
     Difficulties.push(parseInt(block.difficulty));
     Blocks.push(parseInt(block.height));

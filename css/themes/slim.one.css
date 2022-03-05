@@ -719,7 +719,6 @@ hr {
 .table:not([class*=" table-colored"]) thead tr td,
 .table:not([class*=" table-colored"]) tbody tr th,
 .table:not([class*=" table-colored"]) tbody tr td {
-  border-color: #343a40;
   color: white; }
 
 .table-striped tbody tr:nth-child(odd) th,
@@ -776,7 +775,7 @@ hr {
   .table.dataTable tbody tr:hover td, .table.dataTable tbody tr:hover td.sorting_1 {
     background-color: #3B3363; }
   .table.dataTable.no-footer {
-    border-bottom-color: #343a40; }
+    border-bottom-color: white; }
 
 /******************** FILE MANAGER ********************/
 .file-item {

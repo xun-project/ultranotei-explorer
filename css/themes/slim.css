@@ -210,6 +210,14 @@ address {
   border-color: transparent !important;
 }
 
+.border-bottom-white2px {
+  border-bottom: 1px white solid !important;
+}
+
+.border-radius20px {
+  border-radius: 20px !important;
+}
+
 ol,
 ul,
 dl {
@@ -9534,7 +9542,6 @@ textarea.parsley-error:active {
 /* ############### DataTables ############### */
 /* ------------------------------------------ */
 table.dataTable {
-  border: 1px solid #dee2e6;
   margin-bottom: 15px; }
   table.dataTable thead th, table.dataTable thead td {
     padding: 0.75rem;

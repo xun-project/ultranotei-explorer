@@ -39,7 +39,7 @@ var renderPoolRow = function (data) {
   var poolHashrate = data.pool.soloHashrate ? (data.pool.hashrate + data.pool.soloHashrate) : data.pool.hashrate;
   var pools_row = [];
 
-  pools_row.push('<tr>');
+  pools_row.push('<tr class="border-bottom-white2px">');
   pools_row.push('<td id=host-' + data.info.name + '><a target=blank href=http://' + data.info.host + '>' + data.info.name + '</a></td>');
   pools_row.push('<td class="height" id=height-' + data.info.name + '>' + localizeNumber(data.network.height) + '</td>');
   pools_row.push('<td id=hashrate-' + data.info.name + '>' + localizeNumber(poolHashrate) + ' H/s</td>');
