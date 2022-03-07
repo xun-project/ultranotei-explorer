@@ -57,7 +57,7 @@
   <script src="js/main.js"></script>
 </head>
 
-<body>
+<body class="font-family-poppins">
   <div class="slim-header">
     <div class="container">
       <div class="slim-header-left headerLogo">
@@ -76,15 +76,15 @@
         </div>
         <!-- search-box -->
         <div class="search-box">
-          <input type="text" id="txt_search" class="form-control" tplaceholder="searchHint"
+          <input type="text" id="txt_search" class="form-control input-bg-purple-dark" tplaceholder="searchHint"
             placeholder="Search by block height / hash, transaction hash, payment id">
-          <button id="btn_search" class="btn btn-primary">
+          <button id="btn_search" class="btn btn-primary text-white">
             <i class="fa fa-search"></i>
           </button>
         </div>
         <!-- language selector -->
         <div id="langSelector">
-          <select id="newLang" class="form-control form-control-sm select2">
+          <select id="newLang" class="form-control form-control-sm select2 input-bg-purple-dark">
             <option value="en" selected="selected">English</option>
             <option value="es">Español</option>
             <option value="fr">Français</option>
@@ -106,7 +106,7 @@
   <div class="slim-navbar">
     <div class="container">
       <ul class="nav" id="mainNavigation">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link hot_link" data-page="dashboard.html" href="#">
             <i class="icon ion-ios-home-outline"></i>
             <span tkey="dashboard">Dashboard</span>
@@ -173,8 +173,8 @@
   </div>
   <!-- slim-navbar -->
 
-  <div id="content">
-    <div class="container">
+  <div id="content input-bg-purple-dark">
+    <div class="container input-bg-purple-dark">
       <div id="page"></div>
       <p id="loading" class="text-center">
         <i class="fa fa-circle-o-notch fa-spin"></i>

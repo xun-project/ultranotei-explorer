@@ -197,6 +197,27 @@ address {
   font-style: normal;
   line-height: inherit; }
 
+.bg-purple-dark {
+  background-color: #3B3363 !important;
+}
+
+.bg-purple-onlydark {
+  background-color: #2C254A !important;
+}
+
+.input-bg-purple-dark {
+  background: #2C254A !important;
+  border-color: transparent !important;
+}
+
+.border-bottom-white2px {
+  border-bottom: 1px white solid !important;
+}
+
+.border-radius20px {
+  border-radius: 20px !important;
+}
+
 ol,
 ul,
 dl {
@@ -1179,7 +1200,7 @@ pre {
   background-color: rgba(0, 0, 0, 0.05); }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.075); }
+  background-color: #2C254A; }
 
 .table-primary,
 .table-primary > th,
@@ -1375,7 +1396,7 @@ pre {
     outline: 0;
     box-shadow: none; }
   .form-control::placeholder, .dataTables_filter input::placeholder {
-    color: #6c757d;
+    color: white;
     opacity: 1; }
   .form-control:disabled, .dataTables_filter input:disabled, .form-control[readonly], .dataTables_filter input[readonly] {
     background-color: #e9ecef;
@@ -9521,7 +9542,6 @@ textarea.parsley-error:active {
 /* ############### DataTables ############### */
 /* ------------------------------------------ */
 table.dataTable {
-  border: 1px solid #dee2e6;
   margin-bottom: 15px; }
   table.dataTable thead th, table.dataTable thead td {
     padding: 0.75rem;
@@ -11593,7 +11613,7 @@ textarea.parsley-success:focus {
   display: flex;
   align-items: center;
   border: 1px solid #dee2e6;
-  background-color: #f8f9fa;
+  background-color: #3B3363;
   padding: 2px;
   border-radius: 50px; }
   .search-box .form-control, .search-box .dataTables_filter input, .dataTables_filter .search-box input {
@@ -11994,7 +12014,6 @@ textarea.parsley-success:focus {
       background-color: #1b84e7;
       background-image: linear-gradient(to right, #1b84e7 0%, #1515af 100%);
       background-repeat: repeat-x;
-      border-width: 0;
       color: #fff; }
       .slim-navbar .nav-item.active .nav-link .icon {
         color: #fff; }
@@ -12027,7 +12046,7 @@ textarea.parsley-success:focus {
     justify-content: center;
     background-color: #fff;
     border: 1px solid #dee2e6;
-    border-right-width: 0; }
+    }
     .slim-navbar .nav-link .icon {
       font-size: 24px;
       line-height: 0;
@@ -40278,7 +40297,6 @@ a.hover-white-8:hover, a.hover-white-8:focus {
   color: #FFA500;
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #FFA500 !important;
 }
 
 .icon-info {
@@ -40306,7 +40324,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 .card-label {
   margin-right: 5px;
   font-weight: bold;
-  color: #FFA500;
+  color: white;
 }
 
 #apiInfo i,
@@ -40352,8 +40370,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
   line-height: 30px;
   height: 45px;
   padding: 6px;
-  background-color: #212529;
-  border: 1px solid #495057;
+  background-color: #3B3363;
 }
 
 #calcHashDropdown {
@@ -40465,11 +40482,11 @@ body {
 
 .statement-link,
 .nav-statistics-wrapper .nav:first-child .nav-link::before {
-  border-color: #FFA500 !important;
+  border-color: none !important;
 }
 
 a {
-  color: #FFA500 !important;
+  color: white !important;
 }
 
 .rdiobox input[type="radio"]:checked + span::before {
@@ -40484,7 +40501,7 @@ a {
 }
 
 .search-box .btn {
-  background-color: #FFA500 !important;
+  background-color: #3B3363 !important;
 }
 
 .search-box {
@@ -40576,14 +40593,14 @@ a {
 }
 
 #toolsNavItem {
-  border-right: 1px solid #343a40;
+  border-right: 1px solid #dee2e6;
   border-left: 0px none;
 }
 
 /******************** NODE TABLE *********************/
 
 td.ntNodeName {
-  color: #FFA500 !important;
+  color: white !important;
 }
 
 td.ntNodePeers,
@@ -40609,7 +40626,7 @@ th.ntNodePlatform
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:focus {
-  background-color: #FFA500 !important;
+  background-color: #2C254A !important;
 }
 
 .dtrg-group.dtrg-start td
@@ -40687,7 +40704,7 @@ table.dataTable.dtr-inline.collapsed tbody tr[role="row"] > th:first-child::befo
 }
 
 .dataTables_filter label {
-  color: #ccc !important;
+  color: white !important;
 }
 
 .dataTables_filter input {

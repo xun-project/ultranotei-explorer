@@ -63,10 +63,10 @@ function debounce(func, wait, immediate) {
 };
 
 $(document).ready(function () {
-  if (donationAddress !== undefined && donationAddress !== "") {
-    $("#donations").show();
-    $("#donationAddress").html(donationAddress);
-  }
+  // if (donationAddress !== undefined && donationAddress !== "") {
+  //   $("#donations").show();
+  //   $("#donationAddress").html(donationAddress);
+  // }
 });
 
 function formatNumber(num) {
@@ -103,6 +103,7 @@ function updateTextClasses(className, text) {
 
 function updateText(elementId, text) {
   var el = document.getElementById(elementId);
+  console.log("isi el",el);
   if ($(el).html !== text) {
     $(el).html(text);
   }
@@ -349,7 +350,7 @@ function renderLangSelector() {
   var html = '';
   var numLangs = 0;
   if (langs) {
-    html += '<select id="newLang" class="form-control form-control-sm select2">';
+    html += '<select id="newLang" class="form-control form-control-sm select2 input-bg-purple-dark">';
     for (var lang in langs) {
       var selected = lang == langCode ? ' selected="selected"' : '';
       html += '<option value="' + lang + '"' + selected + '>' + langs[lang] + '</option>';
