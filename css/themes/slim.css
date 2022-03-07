@@ -1200,7 +1200,7 @@ pre {
   background-color: rgba(0, 0, 0, 0.05); }
 
 .table-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.075); }
+  background-color: #2C254A; }
 
 .table-primary,
 .table-primary > th,
@@ -40324,7 +40324,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 .card-label {
   margin-right: 5px;
   font-weight: bold;
-  color: #FFA500;
+  color: white;
 }
 
 #apiInfo i,
