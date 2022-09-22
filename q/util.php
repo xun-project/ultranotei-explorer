@@ -2,6 +2,10 @@
 
 function build_post_context(string $postdata) {
         return stream_context_create(array(
+                "ssl"=>array(
+                        "verify_peer"=>false,
+                        "verify_peer_name"=>false,
+                    ),
                 'http' =>
                         array(
                                 'method' => 'POST',
@@ -19,7 +23,14 @@ function build_rpc_body(string $method, string $params) {
 
 function fetch_rpc(string $api, string $method, string $params) {
         $url = $api . '/json_rpc';
+        $arrContextOptions=array(
+                "ssl"=>array(
+                    "verify_peer"=>false,
+                    "verify_peer_name"=>false,
+                ),
+            );  
         $rendered_rpc = build_rpc_body($method, $params);
+        
         $context = build_post_context($rendered_rpc);
         $response = file_get_contents($url, false, $context);
         return json_decode($response, true);
@@ -35,7 +46,14 @@ function fetch_supply(string $api, string $hash) {
 
 function fetch_getinfo(string $api) {
         $_url = $api . '/getinfo';
-        $response = file_get_contents($_url);
+        
+$arrContextOptions=array(
+        "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+        ),
+    );  
+        $response = file_get_contents($_url, false, stream_context_create($arrContextOptions));
         return json_decode($response, true);
 };
 
