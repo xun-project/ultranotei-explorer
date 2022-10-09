@@ -344,28 +344,21 @@
 
     getXUNIdata()
   }
-
+  
   async function getXUNIdata() {
     //var currencies = ["USD", "EUR", "BTC", "LTC", "ETH"]
-    var currencies = ["USD", "BTC"]
-    for (var item of currencies) {
-      var data = await getprice(item)
-      if (data) {
-        data = data[0]
-        $(`#XUNITo${item}`).text(parseFloat(data.price).toFixed(8))
-      }
-    }
-  }
+    $.get("https://www.exbitron.com/api/v2/peatio/public/markets/xuniusdt/tickers", function (data, status) {
+        if (status == "success") {
+          $(`#XUNIToUSD`).text(parseFloat(data.ticker.last).toFixed(8));
+        }
+      });
+      $.get("https://www.exbitron.com/api/v2/peatio/public/markets/xunibtc/tickers", function (data, status) {
+        if (status == "success") {
+          $(`#XUNIToBTC`).text(parseFloat(data.ticker.last).toFixed(8));
+        }
+      });
 
-  function getprice(item) {
-    return new Promise(function (resolve, reject) {
-      $.getJSON(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://api.nomics.com/v1/currencies/ticker?key=507809c103093e0c58f74648d03644c2d0c0ade4&ids=XUNI&interval=1d,30d&convert=${item}&per-page=100&page=1`)}`, function (data, textStatus, jqXHR) {
-        setTimeout(() => {
-
-          resolve(JSON.parse(data.contents))
-        }, 1000)
-      })
-    })
+    
   }
 
 
