@@ -350,6 +350,7 @@
     $.get("https://www.exbitron.com/api/v2/peatio/public/markets/xuniusdt/tickers", function (data, status) {
         if (status == "success") {
           $(`#XUNIToUSD`).text(parseFloat(data.ticker.last).toFixed(8));
+          USDperXUN = data.ticker.last;
         }
       });
       $.get("https://www.exbitron.com/api/v2/peatio/public/markets/xunibtc/tickers", function (data, status) {
@@ -367,7 +368,7 @@
     try {
       var rateUnit = Math.pow(1000, parseInt($('#calcHashUnit').data('mul')));
       var hashRate = parseFloat($('#calcHashRate').val()) * rateUnit;
-      var profit = (hashRate * 86400 / lastStats.difficulty) * lastStats.last_block_reward;
+      var profit = (hashRate * 86400 / lastStats.last_block_difficulty) * lastStats.last_block_reward;
       if (profit) {
         var actualCoins = getReadableCoins(profit, 2, true);
         updateText('calcHashAmount1', actualCoins);
@@ -375,7 +376,7 @@
         return;
       }
     }
-    catch (e) { }
+    catch (e) { console.log(e) }
     updateText('calcHashAmount1', '');
     updateText('calcHashAmount2', '');
   }
