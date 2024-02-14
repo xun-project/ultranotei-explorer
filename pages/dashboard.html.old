@@ -128,7 +128,7 @@
           <div class="card height-10em border-radius20px">
             <div class="card-body text-center">
               <img src="../img/medal.png" class="margin-top-65px height-icon-width" alt="not found"/>
-              <h2 id="currentReward" class="text-white font-weight-600">10</h2>
+              <h2 id="currentReward" class="text-white font-weight-600">N/A</h2>
               <br/>
               <h6 class="text-white">Current block reward</h6>
             </div>
@@ -222,6 +222,7 @@
       <div>
         <h4 class="tx-white mg-b-3 font-size-2em" tkey="miningInfo">Market / Calculator</h4>
       </div>
+
     </div><!-- d-flex -->
 
     <div class="row justify-content-center mt-5 pt-5 mb-5">
@@ -229,7 +230,7 @@
         <div class="card height-10em border-radius20px">
           <div class="card-body text-center">
             <img src="../img/dollars.png" class="margin-top-65px height-icon-width" alt="not found"/>
-            <h2 id="XUNIToUSD" class="text-white font-weight-600">N/A</h2>
+            <h2 id="XUNIToUSD" class="text-white font-weight-600">$0.01</h2>
             <br/>
             <h6 class="text-white">XUNI TO USD</h6>
           </div>
@@ -241,7 +242,7 @@
         <div class="card height-10em border-radius20px">
           <div class="card-body text-center">
             <img src="../img/xuni.png" class="margin-top-65px height-icon-width" alt="not found"/>
-            <h2 id="XUNIToBTC" class="text-white font-weight-600">N/A</h2>
+            <h2 id="XUNIToBTC" class="text-white font-weight-600">0.00000027</h2>
             <br/>
             <h6 class="text-white">XUNI TO BTC</h6>
           </div>
@@ -253,7 +254,7 @@
         <div class="card height-10em border-radius20px">
           <div class="card-body text-center">
             <img src="../img/market-cap.png" class="margin-top-65px height-icon-width" alt="not found"/>
-            <h2 id="marketCap" class="text-white font-weight-600">N/A</h2>
+            <h2 class="text-white font-weight-600">$55.5K</h2>
             <br/>
             <h6 class="text-white">Market Cap</h6>
           </div>
@@ -265,7 +266,7 @@
         <div class="card height-10em border-radius20px">
           <div class="card-body text-center">
             <img src="../img/volume.png" class="margin-top-65px height-icon-width" alt="not found"/>
-            <h2 id="dailyVolume" class="text-white font-weight-600">N/A</h2>
+            <h2 class="text-white font-weight-600">$1.3k</h2>
             <br/>
             <h6 class="text-white">Daily Volume</h6>
           </div>
@@ -344,37 +345,22 @@
 
     getXUNIdata()
   }
-
+  
   async function getXUNIdata() {
     //var currencies = ["USD", "EUR", "BTC", "LTC", "ETH"]
-    var targetVolume = 0;
-    $.get("https://api.xeggex.com/api/v2/ticker/XUNI_USDT", function (data, status) {
-      if (status == "success") {
-        $(`#XUNIToUSD`).text(parseFloat(data.last_price).toFixed(8));
-        targetVolume = data.target_volume
-        USDperXUN = data.last_price;
-      }
-      $.get("https://api.xeggex.com/api/v2/ticker/BTC_USDT", function (data, status) {
+    $.get("https://www.exbitron.com/api/v2/peatio/public/markets/xuniusdt/tickers", function (data, status) {
         if (status == "success") {
-          $(`#XUNIToBTC`).text(parseFloat(USDperXUN/data.last_price).toFixed(8));
+          $(`#XUNIToUSD`).text(parseFloat(data.ticker.last).toFixed(8));
+          USDperXUN = data.ticker.last;
         }
       });
-      $.get("https://explorer.ultranote.org/q/supply/", function (data, status) {
+      $.get("https://www.exbitron.com/api/v2/peatio/public/markets/xunibtc/tickers", function (data, status) {
         if (status == "success") {
-          $(`#marketCap`).text(formatUsd(parseFloat(data * USDperXUN).toFixed(2)));
-          $(`#dailyVolume`).text(formatUsd(parseFloat(targetVolume).toFixed(2)));
+          $(`#XUNIToBTC`).text(parseFloat(data.ticker.last).toFixed(8));
         }
       });
-    });
-  }
 
-  function formatUsd(price) {
-    if (price >= 1000) {
-      price = price / 1000;
-      return price.toFixed(2) + "K $";
-    } else {
-      return price + " $";
-    }
+    
   }
 
 
@@ -549,3 +535,4 @@
     });
   }
 </script>
+
