@@ -3,7 +3,7 @@ Block explorer for UltraNote CryptoNote based cryptocurrency.
 
 #### Installation
 
-1) It takes data from daemon UltraNoted. It should be accessible from the Internet. Run UltraNoted with open port as follows:
+1) It takes data from daemon ultranoteid. It should be accessible from the Internet. Run ultranoteid with open port as follows:
 ```bash
 ./ultranoteid --enable-cors="*" --enable_blockexplorer --rpc-bind-ip=0.0.0.0 --rpc-bind-port=43000
 ```
