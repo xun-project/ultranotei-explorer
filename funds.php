@@ -2,6 +2,7 @@
   define("REASON", "reason");
   define("SUCCESS", "success");
   
+  // WARNING: Hardcoded HMAC key. This is a security risk. Should be moved to configuration.
   if (hash('ripemd160', $_POST['uploadKey']) == "01855f7552595d8ab056318471ac5e0a0421a906")
   {
 	
@@ -21,4 +22,3 @@
   } else {
     echo json_encode(array(SUCCESS => false, REASON => 'The upload key is wrong or not specified!'));
   } 
-?>

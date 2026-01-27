@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exbitron API Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+        }
+
+        .result {
+            margin-bottom: 10px;
+        }
+
+        label {
+            color: #aaa;
+        }
+
+        span {
+            font-weight: bold;
+            color: #0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exbitron API Test</h1>
+    <div class="result"><label>XUNI/USD:</label> <span id="XUNIToUSD">Loading...</span></div>
+    <div class="result"><label>XUNI/BTC:</label> <span id="XUNIToBTC">Loading...</span></div>
+    <div class="result"><label>Market Cap:</label> <span id="marketCap">Loading...</span></div>
+    <div class="result"><label>Daily Volume:</label> <span id="dailyVolume">Loading...</span></div>
+
+    <script>
+        var USDperXUNI = null;
+
+        function formatUsd(price) {
+            var num = parseFloat(price);
+            if (num >= 1000) {
+                return (num / 1000).toFixed(2) + "K $";
+            } else {
+                return num.toFixed(2) + " $";
+            }
+        }
+
+        async function getXUNIdata() {
+            var targetVolume = 0;
+            var xuni_ticker = null;
+            var btc_ticker = null;
+
+            console.log("Fetching Exbitron tickers...");
+            $.get("https://api.exbitron.com/api/v1/cg/tickers", function (data, status) {
+                console.log("Exbitron response status:", status);
+                if (status == "success") {
+                    data.forEach(function (ticker) {
+                        if (ticker.ticker_id === 'XUNI-USDT') {
+                            xuni_ticker = ticker;
+                            console.log("Found XUNI-USDT:", ticker);
+                        }
+                        if (ticker.ticker_id === 'BTC-USDT') {
+                            btc_ticker = ticker;
+                            console.log("Found BTC-USDT:", ticker);
+                        }
+                    });
+
+                    if (xuni_ticker) {
+                        USDperXUNI = parseFloat(xuni_ticker.last_price);
+                        $('#XUNIToUSD').text(USDperXUNI.toFixed(8));
+
+                        targetVolume = parseFloat(xuni_ticker.target_volume);
+                        $('#dailyVolume').text(formatUsd(targetVolume.toFixed(2)));
+
+                        console.log("Fetching Supply...");
+                        // Mocking the supply call since we might not check external UltraNote explorer in this environment easily or CORS might block locally.
+                        // Actually, let's try to fetch it, but if it fails, mock it.
+                        $.get("https://explorer.ultranote.org/q/supply/", function (supplyData, status) {
+                            console.log("Supply response:", supplyData);
+                            if (status == "success") {
+                                $('#marketCap').text(formatUsd((parseFloat(supplyData) * USDperXUNI).toFixed(2)));
+                            }
+                        }).fail(function () {
+                            console.log("Failed to fetch supply, using mock 15,000,000");
+                            var mockSupply = 15000000;
+                            $('#marketCap').text(formatUsd((mockSupply * USDperXUNI).toFixed(2)) + " (Mock)");
+                        });
+                    } else {
+                        $('#XUNIToUSD').text("Ticker not found");
+                    }
+
+                    if (xuni_ticker && btc_ticker) {
+                        var btcPrice = parseFloat(btc_ticker.last_price);
+                        if (btcPrice > 0) {
+                            var xuniInBtc = USDperXUNI / btcPrice;
+                            $('#XUNIToBTC').text(xuniInBtc.toFixed(10));
+                        }
+                    }
+                }
+            }).fail(function (e) {
+                console.log("Exbitron API failed:", e);
+                $('#XUNIToUSD').text("API Error");
+            });
+        }
+
+        $(document).ready(function () {
+            getXUNIdata();
+        });
+    </script>
+</body>
+
+</html>

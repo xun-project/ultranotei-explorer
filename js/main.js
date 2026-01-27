@@ -103,7 +103,7 @@ function updateTextClasses(className, text) {
 
 function updateText(elementId, text) {
   var el = document.getElementById(elementId);
-  console.log("isi el",el);
+  console.log("isi el", el);
   if ($(el).html !== text) {
     $(el).html(text);
   }
@@ -190,7 +190,7 @@ function fetchLiveStats() {
     url: api + '/getinfo',
     dataType: 'json',
     type: 'GET',
-    cache: 'false'
+    cache: false
   }).done(function (data) {
     pulseLiveUpdate();
     lastStats = data;
@@ -421,7 +421,7 @@ function checkReserveRaw(message, address, signature, callback) {
       }
     }),
     dataType: 'json',
-    cache: 'false',
+    cache: false,
     success: function (data) {
       callback(data);
     }
